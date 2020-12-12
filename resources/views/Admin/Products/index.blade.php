@@ -6,12 +6,12 @@
         <script src="/js/admin/components-table.js"></script>
     @endslot
     @slot('breadcrumb')
-        <div class="section-header-breadcrumb">
+        <div class="section-header-breadcrumb  ">
             <div class="breadcrumb-item active"><a href="{{route('admin.dashboard')}}">Dashboard</a></div>
             <div class="breadcrumb-item">Products</div>
         </div>
     @endslot
-    <p class="section-lead">Products With its own users</p>
+    <p class="section-lead ">Products With its own users</p>
     <div class="row">
         <div class="col-12">
             <div class="card">

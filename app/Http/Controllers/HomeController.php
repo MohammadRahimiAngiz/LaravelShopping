@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -35,10 +36,10 @@ class HomeController extends Controller
             'comment' => 'required ',
         ]);
         auth()->user()->comments()->create($validateData);
-//        alert()->success('Comment Successfully saved');
-//        return back();
-        return response()->json([
-            'status'=>'Successfully!!'
-        ]);
+        alert()->success('Comment Successfully saved');
+        return back();
+//        return response()->json([
+//            'status'=>'Successfully!!'
+//        ]);
     }
 }

@@ -13,10 +13,8 @@ class ProductController extends Controller
         return view('home.products', compact('products'));
     }
 
-    public function single($slug_title)
+    public function single(Product $product)
     {
-        $product = Product::where('slug_title', $slug_title)->first();
-//        dd($product->slug_title);
         return view('home.singleProduct', compact('product'));
     }
 }

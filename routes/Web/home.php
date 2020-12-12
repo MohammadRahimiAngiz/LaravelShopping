@@ -47,5 +47,5 @@ Route::prefix('profile')->namespace('profile')->group(function () {
     Route::post('TwoFactor/phone', 'tokenAuthController@postVerifyPhone');
 });
 Route::get('products','ProductController@index');
-Route::get('product/{slug_title}','ProductController@single');
+Route::get('product/{product:slug_title}','ProductController@single');
 Route::post('comments','HomeController@comment')->name('send.comment');
