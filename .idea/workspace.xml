@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <expand />
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravelpro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravelpro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/partial/commentPartial.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/partial/commentPartial.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +339,7 @@
       <workItem from="1607431749078" duration="2084000" />
       <workItem from="1607501047460" duration="14997000" />
       <workItem from="1607755966650" duration="13415000" />
-      <workItem from="1607843590863" duration="466000" />
+      <workItem from="1607843590863" duration="986000" />
     </task>
     <servers />
   </component>
@@ -392,10 +380,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="640" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607843641805" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607843684710">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607844372853">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1607843684710" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1607844372853" />
     <state x="826" y="391" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1607755985042">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
