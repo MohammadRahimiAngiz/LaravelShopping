@@ -90,9 +90,11 @@
                             <div class="card-header">
                                 <img class="mr-3" src="/assets/img/example-image-50.jpg"
                                      alt="Generic placeholder image">
-                                <h4><strong>{{$comment->user->name}}</strong></h4>
+                                    <h4><strong>{{$comment->user->name}}</strong><br/>
+                                        <small class="text-muted ">{{\Carbon\Carbon::parse($comment->created_at)->diffForHumans(['options' => 0])}} </small>
+                                    </h4>
                                 @auth
-                                    <div class="card-header-action">
+                                    <div class="card-header-action ">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary"
                                                 data-toggle="modal"

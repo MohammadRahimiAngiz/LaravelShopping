@@ -3,8 +3,10 @@
         <div class="card-header">
             <img class="mr-3" src="/assets/img/example-image-50.jpg"
                  alt="Generic placeholder image">
-            <h4><strong>{{$childComment->user->name}}</strong></h4>
-            @auth
+            <h4><strong>{{$childComment->user->name}}</strong><br/>
+                <small class="text-muted ">{{\Carbon\Carbon::parse($childComment->created_at)->diffForHumans(['options' => 0])}}</small>
+            </h4>
+        @auth
                 <div class="card-header-action">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-light btn-sm"
