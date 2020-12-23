@@ -48,6 +48,38 @@
                     @endcan
                 </ul>
             </li>
+            <li class="menu-header">Category panel</li>
+            <li class="dropdown {{isActive('admin.categories.index','active')}} {{isActive('admin.categories.create','active')}} ">
+                <a href="#" class="nav-link has-dropdown " data-toggle="dropdown"><i class="fas fa-copyright" style="font-size: 16px;"></i> <span>Categories</span></a>
+                <ul class="dropdown-menu">
+                    @can('show-categories')
+                        <li class="{{isActive('admin.categories.index','active')}}">
+                            <a class="nav-link " href="{{route('admin.categories.index')}}">List Categories</a>
+                        </li>
+                    @endcan
+                    @can('create-category')
+                        <li class="{{isActive('admin.categories.create','active')}}">
+                            <a class="nav-link" href="{{route('admin.categories.create')}}">New Category</a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+            <li class="menu-header">Comments panel</li>
+            <li class="dropdown {{isActive('admin.comments.index','active')}} {{isActive('admin.comments.unapproved','active')}}  ">
+                <a href="#" class="nav-link has-dropdown " data-toggle="dropdown"><i class="fas fa-comments" style="font-size: 16px;"></i> <span>Comments</span></a>
+                <ul class="dropdown-menu">
+                    @can('show-comments')
+                        <li class="{{isActive('admin.comments.index','active')}}">
+                            <a class="nav-link " href="{{route('admin.comments.index')}}">List Comments</a>
+                        </li>
+                    @endcan
+                    @can('unapproved-comments')
+                        <li class="{{isActive('admin.comments.unapproved','active')}}">
+                            <a class="nav-link" href="{{route('admin.comments.unapproved')}}">Unapproved Comments</a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
 {{--            @canany(['show-permissions','show-roles','create-permission','create-role'])--}}
                 <li class="menu-header">Permissions panel</li>
                 <li class="dropdown

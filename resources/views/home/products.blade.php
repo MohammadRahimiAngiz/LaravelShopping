@@ -1,16 +1,14 @@
 @extends('home.layouts.masterHome')
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Article</h1>
+        <div class="section-header bg-transparent">
+            <h1>Products</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Home</a></div>
                 <div class="breadcrumb-item"><a href="#">Products</a></div>
                 <div class="breadcrumb-item">Product</div>
             </div>
         </div>
-
-ul#nav>li.item$*4>a{item $}>strong{item $}
         <div class="section-body">
             <h2 class="section-title">All Products</h2>
             <div class="row">
@@ -24,7 +22,7 @@ ul#nav>li.item$*4>a{item $}>strong{item $}
                                     <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Trending</div>
                                 </div>
                             </div>
-                            <div class="article-details">
+                            <div class="article-details pb-0">
                                 <div class="article-title">
                                     <h2><a href="{{url("product/$product->slug_title")}}">{{$product->title}}</a></h2>
                                 </div>
@@ -33,6 +31,13 @@ ul#nav>li.item$*4>a{item $}>strong{item $}
                                     <small class="text-muted float-left">Price: <strong>{{$product->price}} $</strong></small>
                                     <a href="{{url("product/$product->slug_title")}}">Read More <i class="fas fa-chevron-right"></i></a>
                                 </div>
+                                @if ($product->categories)
+                                    <div class="badges mt-2">
+                                        @foreach ($product->categories as $category)
+                                            <a href="#" class="badge badge-primary">{{$category->name}}</a>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
                         </article>
                     </div>

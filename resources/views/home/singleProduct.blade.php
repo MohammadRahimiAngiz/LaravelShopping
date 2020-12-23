@@ -63,7 +63,7 @@
                             <div class="article-cta mb-4">
                                 <a href="/login">
                                     <small class="text-muted">
-                                        - Login to post a comment
+                                        ... Login is required to post comments
                                     </small>
                                 </a>
                             </div>

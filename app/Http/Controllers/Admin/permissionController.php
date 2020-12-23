@@ -30,7 +30,7 @@ class permissionController extends Controller
         if ($keyword = \request('search')) {
             $permissions = $permissions->where('name', 'LIKE', "%{$keyword}%")->orWhere('label', 'LIKE', "%{$keyword}%")->orWhere('id', $keyword);
         }
-        $permissions = $permissions->latest()->paginate(2);
+        $permissions = $permissions->latest()->paginate(20);
         return view('Admin.Permissions.index', ['permissions' => $permissions]);
     }
 

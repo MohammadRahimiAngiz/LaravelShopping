@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
@@ -36,7 +38,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Admin.Products.create');
+        $categories = Category::all();
+        return view('Admin.Products.create', compact('categories'));
     }
 
     /**
@@ -52,9 +55,13 @@ class ProductController extends Controller
             'price' => ['required', 'numeric'],
             'stock' => ['required', 'numeric'],
             'description' => ['required',],
+            'categories' => ['required', 'array'],
         ]);
-        $data=$data+['slug_title'=>Str::slug($data['title'])];
-        auth()->user()->products()->create($data);
+        $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
+        $product = Product::create($data);
+//        $product = auth()->user()->products()->create($data);
+//        dd($product);
+        $product->categories()->sync($data['categories']);
         return redirect(route('admin.products.index'));
 
     }
@@ -79,20 +86,23 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $data = $request->validate([
-            'title' => ['required', 'string', 'max:255', 'unique:products'],
+            'title' => ['required', 'string', 'max:255', Rule::unique('products')->ignore($product->id)],
             'price' => ['required', 'numeric'],
             'stock' => ['required', 'numeric'],
             'description' => ['required',],
+            'categories' => ['required', 'array'],
         ]);
-        $data = $data + ['user_id' => $request->user()->id];
+        $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
         $product->update($data);
+        $product->categories()->sync($data['categories']);
         alert()->success("Product: * $product->title * is updated.");
         return redirect(route('admin.products.index'));
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product)
     {

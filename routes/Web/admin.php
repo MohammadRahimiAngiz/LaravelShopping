@@ -19,9 +19,7 @@ Route::resource('permissions','permissionController');
 Route::resource('roles','RoleController');
 Route::resource('products','ProductController')->except('show');
 Route::get('dashboard','dashboardController@index')->name('dashboard');
-//Route::get('/index',function (){
-//   return view('Admin.index');
-//});
-
-
+Route::get('comments/unapproved','CommentController@unapproved')->name('comments.unapproved');
+Route::resource('comments','CommentController')->only(['index','update','destroy','edit']);
+Route::resource('categories','CategoryController')->except('show');
 

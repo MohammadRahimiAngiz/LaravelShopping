@@ -1,9 +1,94 @@
 @component('Admin.layouts.content',['title'=>'New Product'])
     @slot('css')
-        {{--        <link rel="stylesheet" href="/css/admin/css/select2.min.css">--}}
+                <link rel="stylesheet" href="/css/admin/css/select2.min.css">
     @endslot
     @slot('script')
-        {{--        <script src="/js/admin/select2.full.min.js"></script>--}}
+                <script src="/js/admin/select2.full.min.js"></script>
+                <script>
+                    $('#categories').select2({
+                        'placeholder' : 'دسترسی مورد نظر را انتخاب کنید'
+                    })
+
+
+                    let changeAttributeValues = (event , id) => {
+                        let valueBox = $(`select[name='attributes[${id}][value]']`);
+
+                        $.ajaxSetup({
+                            headers : {
+                                'X-CSRF-TOKEN' : document.head.querySelector('meta[name="csrf-token"]').content,
+                                'Content-Type' : 'application/json'
+                            }
+                        })
+
+                        $.ajax({
+                            type : 'POST',
+                            url : '/admin/attribute/values',
+                            data : JSON.stringify({
+                                name : event.target.value
+                            }),
+                            success : function(data) {
+                                valueBox.html(`
+                            <option selected>Select</option>
+                            ${
+                                    data.data.map(function (item) {
+                                        return `<option value="${item}">${item}</option>`
+                                    })
+                                }
+                        `);
+
+                                $('.attribute-select').select2({ tags : true });
+                            }
+                        });
+                    }
+
+                    let createNewAttr = ({ attributes , id }) => {
+                        return `
+                    <div class="row" id="attribute-${id}">
+                        <div class="col-5">
+                            <div class="form-group">
+                                 <label> Name Attribute</label>
+                                 <select name="attributes[${id}][name]" onchange="changeAttributeValues(event, ${id});" class="attribute-select form-control">
+                                    <option value="">Select</option>
+                                    ${
+                            attributes.map(function(item) {
+                                return `<option value="${item}">${item}</option>`
+                            })
+                        }
+                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group">
+                                 <label>Value Attribute</label>
+                                 <select name="attributes[${id}][value]" class="attribute-select form-control">
+                                        <option value=""> Select</option>
+                                 </select>
+                            </div>
+                        </div>
+                         <div class="col-2">
+                            <label >Actions</label>
+                            <div>
+                                <button type="button" class="btn btn-sm btn-warning" onclick="document.getElementById('attribute-${id}').remove()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                `
+                    }
+
+                    $('#add_product_attribute').click(function() {
+                        let attributesSection = $('#attribute_section');
+                        let id = attributesSection.children().length;
+
+                        attributesSection.append(
+                            createNewAttr({
+                                attributes : [],
+                                id
+                            })
+                        );
+
+                        $('.attribute-select').select2({ tags : true });
+                    });
+                </script>
     @endslot
     @slot('breadcrumb')
         <div class="section-header-breadcrumb">
@@ -68,7 +153,20 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label>Select Categories</label>
+                        <select class="form-control select2" multiple="" required name="categories[]">
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <h6>Attributes Product</h6>
+                    <hr>
+                    <div id="attribute_section"></div>
+                    <button class="btn btn-sm btn-danger" type="button" id="add_product_attribute">New Attribute</button>
                 </div>
+
                 <div class="card-footer text-right">
                     <button class="btn btn-primary">
                         <i class="fas fa-tractor mr-1"></i>

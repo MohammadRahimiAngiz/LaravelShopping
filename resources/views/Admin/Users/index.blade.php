@@ -92,7 +92,7 @@
                                             <div class="badge badge-danger">Inactive</div>
                                         </td>
                                     @endif
-                                    <td>{{$user->created_at}}</td>
+                                    <td>{{\Carbon\Carbon::parse($user->created_at)->diffForHumans(['options' => 0])}}</td>
                                     <td>
                                         @can('delete-user')
                                             <form action="{{route('admin.users.destroy',['user'=>$user->id])}}"

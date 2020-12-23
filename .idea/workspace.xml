@@ -9,9 +9,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravelpro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravelpro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Attribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/AttributeValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CommentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/View/Components/logo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_103102_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_131946_create_attributes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Categories/categoryPartial.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Categories/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Categories/permission.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Comments/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Comments/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Comments/unapproved.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/logo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/permissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/permissionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/zhino.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/zhino.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/masterHome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/masterHome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Web/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,34 +200,40 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1g4zoAJAF0NDtZu1VKIBJQFyD4O" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\iran\laravelpro\public\js" />
-      <recent name="C:\xampp\htdocs\iran\laravelpro\public\css" />
-      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin\Users" />
-      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin\Roles" />
-      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin\Permissions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\iran\laravelpro\app\Http\Controllers\Admin\User" />
       <recent name="D:\laravelpro\resources\views\Admin\Users" />
       <recent name="D:\laravelpro\resources\sass" />
       <recent name="D:\laravelpro\routes\Web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin" />
+      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin\Comments" />
+      <recent name="C:\xampp\htdocs\iran\laravelpro\public\js" />
+      <recent name="C:\xampp\htdocs\iran\laravelpro\public\css" />
+      <recent name="C:\xampp\htdocs\iran\laravelpro\resources\views\Admin\Users" />
     </key>
   </component>
   <component name="RunManager">
@@ -339,7 +383,17 @@
       <workItem from="1607431749078" duration="2084000" />
       <workItem from="1607501047460" duration="14997000" />
       <workItem from="1607755966650" duration="13415000" />
-      <workItem from="1607843590863" duration="986000" />
+      <workItem from="1607843590863" duration="6807000" />
+      <workItem from="1607928719238" duration="13895000" />
+      <workItem from="1608009488656" duration="4484000" />
+      <workItem from="1608040923916" duration="1095000" />
+      <workItem from="1608096553618" duration="9878000" />
+      <workItem from="1608354880002" duration="19852000" />
+      <workItem from="1608457649762" duration="5481000" />
+      <workItem from="1608529299595" duration="10299000" />
+      <workItem from="1608620104064" duration="2163000" />
+      <workItem from="1608624850583" duration="7768000" />
+      <workItem from="1608715083328" duration="3192000" />
     </task>
     <servers />
   </component>
@@ -375,11 +429,26 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="640" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607843641805">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="640" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607843641805" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608541719847">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608541719847" />
+    <state x="584" y="302" key="EditFileWatcherDialog" timestamp="1608624996633">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="584" y="302" key="EditFileWatcherDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608624996633" />
+    <state x="491" y="169" key="SettingsEditor" timestamp="1608731846915">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="491" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1608731846915" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607844372853">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -388,9 +457,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="826" y="391" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1050@0.0.1920.1050" timestamp="1607755985042" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1607768946984">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1607937630715">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1607768946984" />
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1607937630715" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1608634125236">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608634125236" />
   </component>
 </project>

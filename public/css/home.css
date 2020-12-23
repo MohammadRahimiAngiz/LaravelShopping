@@ -1,0 +1,26 @@
+.article::after {
+  border-left: 5px solid #563d7c;
+  border-bottom: 5px solid #563d7c;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  content: "";
+  display: block;
+  width: 70%;
+  height: 25px;
+}
+
+.article::before {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  content: "";
+  display: block;
+  width: 70%;
+  height: 25px;
+  border-top: 5px solid #563d7c;
+  border-right: 5px solid #563d7c;
+  border-radius: 5px;
+}
+

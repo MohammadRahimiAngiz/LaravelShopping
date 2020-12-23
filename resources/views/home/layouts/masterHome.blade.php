@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/admin/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
@@ -22,13 +23,16 @@
 
     <style>
 
+
         .logo {
-            background: url('/zhino.svg') center center no-repeat #fff;
+            background: #fff;
             width: 120px;
             height: 120px;
-            top: -15px;
+            top: 3px;
             position: relative;
+            padding-left: 6px;
         }
+
 
         .bg {
             background: url('/image/bg.png') top center repeat-x;

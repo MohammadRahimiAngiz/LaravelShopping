@@ -1,9 +1,9 @@
-@component('Admin.layouts.content',['title'=>'Edit Role:' ])
+@component('Admin.layouts.content',['title'=>'Edit Product:' ])
     @slot('css')
-{{--        <link rel="stylesheet" href="/css/admin/css/select2.min.css">--}}
+        <link rel="stylesheet" href="/css/admin/css/select2.min.css">
     @endslot
     @slot('script')
-{{--        <script src="/js/admin/select2.full.min.js"></script>--}}
+        <script src="/js/admin/select2.full.min.js"></script>
     @endslot
     @slot('breadcrumb')
         <div class="section-header-breadcrumb">
@@ -69,6 +69,16 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Categories</label>
+                        <select class="form-control select2" multiple="" required name="categories[]">
+                            @foreach (\App\Category::all() as $category)
+                                <option
+                                    {{in_array($category->id,$product->categories->pluck('id')->toArray()) ? 'selected' : ''}}
+                                    value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="card-footer text-right">

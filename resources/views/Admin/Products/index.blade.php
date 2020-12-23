@@ -53,6 +53,7 @@
                                 <th>ID</th>
                                 <th>Title<br/><small class="text-muted">User</small></th>
                                 <th>Description</th>
+                                <th>Categories</th>
                                 <th>Price</th>
                                 <th>Stock</th>
                                 @canany(['edit-product','delete-product'])
@@ -72,6 +73,13 @@
                                     <td>{{$product->id}}</td>
                                     <td>{{$product->title}}<br/><small class="text-muted">{{$product->user->name}}</small></td>
                                     <td>{{$product->description}}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach ($product->categories as $category)
+                                                <li>{{$category->name}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                     <td>{{$product->price}}</td>
                                     <td>{{$product->stock}}</td>
                                     <td>
