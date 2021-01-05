@@ -19,7 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app" style="background-image: url('image/bgNature.jpg');background-size: 100vw 100vh;height: 100vh;">
+<div id="app" style="background-image: url('/image/bgNature.jpg');background-size: 100vw 100vh;height: 100vh;">
     <nav class="navbar navbar-expand-md  shadow-sm">
         <div class="container ">
             <a class="navbar-brand" href="{{ url('/') }}">

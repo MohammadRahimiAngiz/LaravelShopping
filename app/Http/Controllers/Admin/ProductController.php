@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Attribute;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use phpDocumentor\Reflection\Types\Collection;
 
 class ProductController extends Controller
 {
@@ -46,7 +48,7 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -56,12 +58,22 @@ class ProductController extends Controller
             'stock' => ['required', 'numeric'],
             'description' => ['required',],
             'categories' => ['required', 'array'],
+            'attributes' => ['array'],
         ]);
         $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
-        $product = Product::create($data);
-//        $product = auth()->user()->products()->create($data);
-//        dd($product);
+        $product = auth()->user()->products()->create($data);
         $product->categories()->sync($data['categories']);
+        $attributes = collect($data['attributes']);
+        $attributes->each(function ($item) use ($product) {
+            if (is_null($item['name']) || is_null($item['value'])) return;
+            $attr = Attribute::firstOrCreate(
+                ['name' => $item['name']]
+            );
+            $attrValue = $attr->values()->firstOrCreate(
+                ['value' => $item['value']]
+            );
+            $product->attributes()->attach($attr->id, ['value_id' => $attrValue->id]);
+        });
         return redirect(route('admin.products.index'));
 
     }

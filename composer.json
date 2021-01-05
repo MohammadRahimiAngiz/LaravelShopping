@@ -17,7 +17,8 @@
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "uxweb/sweet-alert": "^2.0"
+        "uxweb/sweet-alert": "^2.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

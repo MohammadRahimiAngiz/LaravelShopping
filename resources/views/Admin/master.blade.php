@@ -10,7 +10,7 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="/css/admin/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/admin/modules/fontawesome/css/all.min.css">
-
+    <link rel="stylesheet" href="/css/admin/css/select2.min.css">
     <!-- CSS Libraries -->
     @yield('css')
     <!-- Template CSS -->
@@ -53,6 +53,8 @@
 <script src="/js/admin/scripts.js"></script>
 <script src="/js/admin/admin.js"></script>
 <script src="/js/admin/jquery-ui.min.js"></script>
+<script src="/js/admin/select2.full.min.js"></script>
+<script src="/js/admin/vue.js"></script>
 
 @yield('script')
 @include('sweet::alert')

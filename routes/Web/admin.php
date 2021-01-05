@@ -22,4 +22,5 @@ Route::get('dashboard','dashboardController@index')->name('dashboard');
 Route::get('comments/unapproved','CommentController@unapproved')->name('comments.unapproved');
 Route::resource('comments','CommentController')->only(['index','update','destroy','edit']);
 Route::resource('categories','CategoryController')->except('show');
-
+Route::get('attributes','AttributeController@index');
+Route::get('attribute/values/{attribute:name}','AttributeController@attributeValues');

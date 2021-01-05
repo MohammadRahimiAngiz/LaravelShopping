@@ -4,6 +4,7 @@
     @endslot
     @slot('script')
         <script src="/js/admin/select2.full.min.js"></script>
+
     @endslot
     @slot('breadcrumb')
         <div class="section-header-breadcrumb">
@@ -80,6 +81,9 @@
                             @endforeach
                         </select>
                     </div>
+                    <h2 class="section-title">Attributes Product</h2>
+                    <hr>
+                    <attribute-add :attributes-product="{{ $product->attributes->pluck('name') }}" ></attribute-add>
                 </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-primary"><i class="fas fa-tractor mr-1"></i>Save Edit Product</button>
