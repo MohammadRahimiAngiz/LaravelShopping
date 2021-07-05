@@ -41,7 +41,7 @@
 @endsection
 @section('content')
     <section class="section">
-        <div class="section-header mt-3">
+        <div class="section-header mt-5">
             <div class="section-header-breadcrumb ml-0">
                 <div class="breadcrumb-item active"><a href="{{url('/')}}">Home</a></div>
                 <div class="breadcrumb-item"><a href="{{url('/products')}}">Products</a></div>
@@ -51,38 +51,53 @@
         <div class="section-body">
             <h3 class="">{{$product->title}}</h3>
             <p>{{$product->description}} </p>
-            <div class="article-cta">
-                <small class="text-muted ">Price: <strong>{{$product->price}} $ </strong>, Stock:
-                    <strong>{{$product->stock}}</strong></small>
+            <div class="article-cta d-flex justify-content-between col-3">
+                <small class="text-muted ">Price: <strong>{{$product->price}} $ </strong></small>
+                <small class="text-muted ">Stock: <strong>{{$product->stock}}</strong></small>
             </div>
-            @if ( $product->comments()->count())
-                <div class="row">
-                    <div class="col-12 col-md-3 col lg-3">
-                        <h1 class="section-title mt-4 mb-0">Comments</h1>
-                        @guest()
-                            <div class="article-cta mb-4">
-                                <a href="/login">
-                                    <small class="text-muted">
-                                        ... Login is required to post comments
-                                    </small>
-                                </a>
-                            </div>
-                        @endguest
-                    </div>
-                    <div class="col-12 col-md-3 col-lg-3 text-right pt-4 pb-2">
-                        @auth
-                            <button type="button" class="btn btn-primary btn-sm"
-                                    data-toggle="modal"
-                                    data-target="#myModal"
-                                    data-id="0"
-                            >
-                                <i class="far fa-comment"></i>
-                                {{__('New')}}
-                            </button>
-                        @endauth
-                    </div>
+            <div class="col-3">
+                <hr>
+            </div>
+{{--            {{dd(\App\Services\Cart\Cart::count($product))}}--}}
+            @if(\App\Services\Cart\Cart::count($product) < $product->stock)
+                <div class="article-cta">
+                    <form action="{{route('cart.add', $product->slug_title)}}" method="POST" id="addToCart">
+                        @csrf
+                        <span
+                            onclick="document.getElementById('addToCart').submit()"
+                            class="btn btn-icon icon-left btn-primary mt-3">
+                        <i class="fas fa-cart-plus" style="font-size: 16px;"></i> Add to Cart
+                    </span>
+                    </form>
                 </div>
             @endif
+            {{--            @if ( $product->comments()->count())--}}
+            <div class="row">
+                <div class="col-12 col-md-3 col lg-3">
+                    <h1 class="section-title mt-4 mb-0">Comments</h1>
+                    @guest()
+                        <div class="article-cta mb-4">
+                            <a href="/login">
+                                <small class="text-muted">
+                                    ... Login is required to post comments
+                                </small>
+                            </a>
+                        </div>
+                    @endguest
+                </div>
+                <div class="col-12 col-md-3 col-lg-3 text-right pt-4 pb-2">
+                    @auth
+                        <button type="button" class="btn btn-primary btn-sm"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                data-id="0">
+                            <i class="far fa-comment"></i>
+                            {{__('New')}}
+                        </button>
+                    @endauth
+                </div>
+            </div>
+            {{--            @endif--}}
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6">
                     @foreach ($product->comments()->where('parent_id',0)->latest()->get() as $comment)
@@ -90,9 +105,10 @@
                             <div class="card-header">
                                 <img class="mr-3" src="/assets/img/example-image-50.jpg"
                                      alt="Generic placeholder image">
-                                    <h4><strong>{{$comment->user->name}}</strong><br/>
-                                        <small class="text-muted ">{{\Carbon\Carbon::parse($comment->created_at)->diffForHumans(['options' => 0])}} </small>
-                                    </h4>
+                                <h4><strong>{{$comment->user->name}}</strong><br/>
+                                    <small
+                                        class="text-muted ">{{\Carbon\Carbon::parse($comment->created_at)->diffForHumans(['options' => 0])}} </small>
+                                </h4>
                                 @auth
                                     <div class="card-header-action ">
                                         <!-- Button trigger modal -->
@@ -142,7 +158,7 @@
                     </div>
                     <form action="{{route('send.comment')}}" method="post" id="sendCommentForm">
                         @csrf
-                        <input type="hidden" name="commentable_id" value="{{$product->id}}" >
+                        <input type="hidden" name="commentable_id" value="{{$product->id}}">
                         <input type="hidden" name="commentable_type" value="{{get_class($product)}}">
                         <input type="hidden" name="parent_id" value="0">
                         <div class="modal-body">

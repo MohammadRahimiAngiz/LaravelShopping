@@ -63,17 +63,7 @@ class ProductController extends Controller
         $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
         $product = auth()->user()->products()->create($data);
         $product->categories()->sync($data['categories']);
-        $attributes = collect($data['attributes']);
-        $attributes->each(function ($item) use ($product) {
-            if (is_null($item['name']) || is_null($item['value'])) return;
-            $attr = Attribute::firstOrCreate(
-                ['name' => $item['name']]
-            );
-            $attrValue = $attr->values()->firstOrCreate(
-                ['value' => $item['value']]
-            );
-            $product->attributes()->attach($attr->id, ['value_id' => $attrValue->id]);
-        });
+        $this->attachAttributesProduct($data['attributes'], $product);
         return redirect(route('admin.products.index'));
 
     }
@@ -81,11 +71,15 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(Product $product)
     {
-        return view('Admin.Products.edit', compact('product'));
+        $arrData = [];
+        foreach ($product->attributes as $attr) {
+            array_push($arrData, [$attr['name'], $attr->pivot->value['value']]);
+        }
+        return view('Admin.Products.edit', [ 'product'=>$product,'arrData'=>json_encode($arrData)]);
     }
 
     /**
@@ -97,16 +91,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255', Rule::unique('products')->ignore($product->id)],
             'price' => ['required', 'numeric'],
             'stock' => ['required', 'numeric'],
             'description' => ['required',],
             'categories' => ['required', 'array'],
+            'attributes' => ['array'],
         ]);
         $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
         $product->update($data);
         $product->categories()->sync($data['categories']);
+        $product->attributes()->detach();
+        $this->attachAttributesProduct($data['attributes'], $product);
         alert()->success("Product: * $product->title * is updated.");
         return redirect(route('admin.products.index'));
     }
@@ -120,5 +118,24 @@ class ProductController extends Controller
     {
         $product->delete();
         return back();
+    }
+
+    /**
+     * @param $attributes1
+     * @param Product $product
+     */
+    protected function attachAttributesProduct($attributes1, Product $product): void
+    {
+        $attributes = collect($attributes1);
+        $attributes->each(function ($item) use ($product) {
+            if (is_null($item['name']) || is_null($item['value'])) return;
+            $attr = Attribute::firstOrCreate(
+                ['name' => $item['name']]
+            );
+            $attrValue = $attr->values()->firstOrCreate(
+                ['value' => $item['value']]
+            );
+            $product->attributes()->attach($attr->id, ['value_id' => $attrValue->id]);
+        });
     }
 }

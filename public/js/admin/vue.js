@@ -1948,27 +1948,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AttributeAdd",
   props: ['attributesProduct'],
   data: function data() {
     return {
       attributeValueInputs: [],
-      attributesGet: []
+      attributesGet: [],
+      valuesData: [],
+      showAttributes: true
     };
   },
   mounted: function mounted() {
     var _this = this;
-
-    if (this.attributesProduct) {
-      this.attributesProduct = JSON.parse(this.attributesProduct);
-    }
 
     axios.get('/admin/attributes').then(function (resp) {
       return _this.attributesGet = resp.data;
     })["catch"](function (resp) {
       return alert("Could not load attribute" + resp);
     });
+
+    if (this.attributesProduct === '') {
+      this.showAttributes = false;
+    }
   },
   methods: {
     addAttribute: function addAttribute() {
@@ -1980,6 +1988,31 @@ __webpack_require__.r(__webpack_exports__);
         selectValue: ''
       };
       this.attributeValueInputs.push(newAttributeValue);
+    },
+    attributes: function attributes() {
+      var _this2 = this;
+
+      if (this.attributesProduct.length) {
+        this.attributesProduct.forEach(function (element) {
+          axios.get('/admin/attribute/values/' + element[0]).then(function (resp) {
+            var newAttributeValue1 = {
+              id: Math.random() * Math.random() * 1000,
+              attributes: _this2.attributesGet,
+              values: resp.data,
+              selectAttribute: element[0],
+              selectValue: element[1]
+            };
+
+            _this2.attributeValueInputs.push(newAttributeValue1);
+          })["catch"](function (resp) {
+            return console.log('could not values' + resp);
+          });
+        });
+      } else {
+        console.log('null');
+      }
+
+      this.showAttributes = false;
     },
     onDeleteAttributeValue: function onDeleteAttributeValue(id) {
       this.attributeValueInputs = this.attributeValueInputs.filter(function (attrValue) {
@@ -1994,7 +2027,8 @@ __webpack_require__.r(__webpack_exports__);
           return console.log('could not values' + resp);
         });
       } else {
-        attrValueInput.values = '';
+        attrValueInput.values = [''];
+        attrValueInput.selectValue = '';
       }
     }
   }
@@ -3200,6 +3234,22 @@ var render = function() {
           ])
         ])
       }),
+      _vm._v(" "),
+      _vm.showAttributes
+        ? _c(
+            "button",
+            {
+              staticClass: "btn btn-sm btn-outline-primary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.attributes()
+                }
+              }
+            },
+            [_vm._v("\n        Attributes Product\n    ")]
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "button",

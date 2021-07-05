@@ -78,7 +78,7 @@
                     </div>
                     <h2 class="section-title">Attributes Product</h2>
                     <hr>
-                    <attribute-add></attribute-add>
+                    <attribute-add :attributes-product="''"></attribute-add>
                 </div>
 
                 <div class="card-footer text-right">

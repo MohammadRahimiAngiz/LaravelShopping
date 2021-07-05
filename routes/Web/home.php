@@ -23,7 +23,7 @@ Route::get('/', function () {
 //    'user_id'=>auth()->user()->id,
 //]);
 
-return view('layouts.app');
+    return view('layouts.app');
 //auth()->user()->comments()->create([
 //    'comment'=>'this is my comment',
 //    'commentable_id'=>$product->id,
@@ -39,13 +39,22 @@ Route::get('/auth/google/callback', 'Auth\GoogleAuthController@callback');
 Route::get('/auth/token', 'auth\authTokenController@getToken')->name('2fa.token');
 Route::post('/auth/token', 'auth\authTokenController@postToken');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::prefix('profile')->namespace('profile')->group(function () {
-    Route::get('/', 'indexController@index')->name('profile');
-    Route::get('twoFactor', 'twoFactorAuthController@manageTwoFactor')->name('twoFactor');
-    Route::post('twoFactor', 'twoFactorAuthController@postManageTwoFactor');
-    Route::get('TwoFactor/phone', 'tokenAuthController@getVerifyPhone')->name('tokenVerifyPhone');
-    Route::post('TwoFactor/phone', 'tokenAuthController@postVerifyPhone');
+
+Route::get('products', 'ProductController@index');
+Route::get('product/{product:slug_title}', 'ProductController@single');
+Route::post('cart/add/{product:slug_title}', 'CartController@addToCart')->name('cart.add');
+Route::get('cart', 'CartController@cart');
+Route::patch('/cart/quantity/change', 'CartController@quantityChange');
+Route::delete('cart/delete/{cart}', 'CartController@deleteFromCart')->name('cart.destroy');
+Route::middleware('auth')->group(function () {
+    Route::prefix('profile')->namespace('profile')->group(function () {
+        Route::get('/', 'indexController@index')->name('profile');
+        Route::get('twoFactor', 'twoFactorAuthController@manageTwoFactor')->name('twoFactor');
+        Route::post('twoFactor', 'twoFactorAuthController@postManageTwoFactor');
+        Route::get('TwoFactor/phone', 'tokenAuthController@getVerifyPhone')->name('tokenVerifyPhone');
+        Route::post('TwoFactor/phone', 'tokenAuthController@postVerifyPhone');
+    });
+    Route::post('comments', 'HomeController@comment')->name('send.comment');
+    Route::post('payment', 'PaymentController@payment')->name('cart.payment');
+    Route::get('payment/callback', 'PaymentController@callback')->name('payment.callback');
 });
-Route::get('products','ProductController@index');
-Route::get('product/{product:slug_title}','ProductController@single');
-Route::post('comments','HomeController@comment')->name('send.comment');

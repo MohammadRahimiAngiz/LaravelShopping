@@ -35,6 +35,12 @@
             </div>
 
         </div>
+        <button class="btn btn-sm btn-outline-primary" type="button"
+                @click="attributes()"
+                v-if="showAttributes"
+        >
+            Attributes Product
+        </button>
         <button class="btn btn-sm btn-outline-danger" type="button" @click="addAttribute()">New Attribute</button>
     </div>
 </template>
@@ -43,17 +49,19 @@ export default {
     name: "AttributeAdd",
     props: ['attributesProduct'],
 
-    data:()=> ({
+    data: () => ({
         attributeValueInputs: [],
         attributesGet: [],
+        valuesData: [],
+        showAttributes: true,
     }),
     mounted() {
-        if(this.attributesProduct){
-            this.attributesProduct = JSON.parse(this.attributesProduct)
-        }
         axios.get('/admin/attributes')
             .then(resp => this.attributesGet = resp.data)
             .catch(resp => alert("Could not load attribute" + resp));
+        if (this.attributesProduct === '') {
+            this.showAttributes = false;
+        }
     },
     methods: {
         addAttribute() {
@@ -66,6 +74,28 @@ export default {
             };
             this.attributeValueInputs.push(newAttributeValue);
         },
+        attributes() {
+            if (this.attributesProduct.length) {
+                this.attributesProduct.forEach((element) => {
+                        axios.get('/admin/attribute/values/' + element[0])
+                            .then((resp) => {
+                                const newAttributeValue1 = {
+                                    id: Math.random() * Math.random() * 1000,
+                                    attributes: this.attributesGet,
+                                    values: resp.data,
+                                    selectAttribute: element[0],
+                                    selectValue: element[1],
+                                };
+                                this.attributeValueInputs.push(newAttributeValue1);
+                            })
+                            .catch(resp => console.log('could not values' + resp));
+                    }
+                );
+            } else {
+                console.log('null')
+            }
+            this.showAttributes = false;
+        },
         onDeleteAttributeValue(id) {
             this.attributeValueInputs = this.attributeValueInputs.filter(attrValue => attrValue.id !== id);
         },
@@ -75,7 +105,8 @@ export default {
                     .then(resp => attrValueInput.values = resp.data)
                     .catch(resp => console.log('could not values' + resp));
             } else {
-                attrValueInput.values = '';
+                attrValueInput.values = [''];
+                attrValueInput.selectValue = '';
             }
         },
     },

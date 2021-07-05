@@ -125,6 +125,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return !!$roles->intersect($this->roles)->all();
     }
-
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
 

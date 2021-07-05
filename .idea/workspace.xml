@@ -9,39 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AttributeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/avatar/avatar-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/avatar/avatar-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/avatar/avatar-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/avatar/avatar-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/avatar/avatar-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/products/product-1-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/products/product-2-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/products/product-3-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/products/product-4-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/img/products/product-5-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/admin/vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/AttributeAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin/modules/jqvmap/dist/jquery.vmap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin/modules/jqvmap/dist/jquery.vmap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/admin/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AttributeAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AttributeAdd.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/layouts/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/layouts/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Web/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Web/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +42,16 @@
         <option value="SCSS File" />
         <option value="CSS File" />
         <option value="Blade " />
-        <option value="Blade File " />
         <option value="JavaScript File" />
         <option value="package.json" />
         <option value="tsconfig.json" />
         <option value="Vue Single File Component" />
+        <option value="Blade File " />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="develope" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -196,6 +183,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/flotfeali/payping-client" />
     </include_path>
   </component>
   <component name="ProjectId" id="1g4zoAJAF0NDtZu1VKIBJQFyD4O" />
@@ -213,10 +201,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin/assets/img/avatar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -408,6 +396,92 @@
       <workItem from="1609820800473" duration="4886000" />
       <workItem from="1609826308546" duration="9265000" />
       <workItem from="1609843285758" duration="12076000" />
+      <workItem from="1609857279872" duration="2597000" />
+      <workItem from="1609931590250" duration="4680000" />
+      <workItem from="1610177334030" duration="13877000" />
+      <workItem from="1610272605864" duration="5258000" />
+      <workItem from="1610429305092" duration="1330000" />
+      <workItem from="1610432892360" duration="1204000" />
+      <workItem from="1610519155390" duration="1717000" />
+      <workItem from="1610946235368" duration="600000" />
+      <workItem from="1611038000172" duration="12000" />
+      <workItem from="1612592674776" duration="1240000" />
+      <workItem from="1612676893547" duration="652000" />
+      <workItem from="1612678464399" duration="786000" />
+      <workItem from="1613287954751" duration="1240000" />
+      <workItem from="1613299488995" duration="1200000" />
+      <workItem from="1613360587364" duration="5564000" />
+      <workItem from="1613458829859" duration="4271000" />
+      <workItem from="1613535935981" duration="5603000" />
+      <workItem from="1613796318465" duration="1754000" />
+      <workItem from="1613814648621" duration="1506000" />
+      <workItem from="1613889420769" duration="1501000" />
+      <workItem from="1613893583888" duration="4985000" />
+      <workItem from="1613988516662" duration="1449000" />
+      <workItem from="1614059355670" duration="1851000" />
+      <workItem from="1614143216688" duration="5463000" />
+      <workItem from="1614408691842" duration="3367000" />
+      <workItem from="1614490330576" duration="938000" />
+      <workItem from="1614588474241" duration="4573000" />
+      <workItem from="1614752454729" duration="3738000" />
+      <workItem from="1615004960161" duration="5432000" />
+      <workItem from="1615107035990" duration="6115000" />
+      <workItem from="1615274649677" duration="1906000" />
+      <workItem from="1615626292268" duration="1200000" />
+      <workItem from="1615713642770" duration="5182000" />
+      <workItem from="1615783410509" duration="647000" />
+      <workItem from="1615883106451" duration="2825000" />
+      <workItem from="1617180987711" duration="2000" />
+      <workItem from="1617182051801" duration="75000" />
+      <workItem from="1617182154515" duration="152000" />
+      <workItem from="1617421848004" duration="8019000" />
+      <workItem from="1617509535769" duration="933000" />
+      <workItem from="1617684086088" duration="618000" />
+      <workItem from="1619504523267" duration="2571000" />
+      <workItem from="1619850302250" duration="189000" />
+      <workItem from="1619850546798" duration="1299000" />
+      <workItem from="1620015757095" duration="1292000" />
+      <workItem from="1620050563319" duration="40000" />
+      <workItem from="1620050614914" duration="723000" />
+      <workItem from="1620192846995" duration="20000" />
+      <workItem from="1620192878741" duration="104000" />
+      <workItem from="1620192994922" duration="33000" />
+      <workItem from="1620193039609" duration="5114000" />
+      <workItem from="1620441728646" duration="18000" />
+      <workItem from="1620441758144" duration="1238000" />
+      <workItem from="1620556798006" duration="3955000" />
+      <workItem from="1620621623491" duration="2000" />
+      <workItem from="1620636408200" duration="613000" />
+      <workItem from="1620720679189" duration="5048000" />
+      <workItem from="1621397798359" duration="159000" />
+      <workItem from="1621403047647" duration="1853000" />
+      <workItem from="1621409768550" duration="3692000" />
+      <workItem from="1621670786350" duration="1228000" />
+      <workItem from="1621912257416" duration="880000" />
+      <workItem from="1622256638499" duration="1826000" />
+      <workItem from="1622444669402" duration="2718000" />
+      <workItem from="1623043634028" duration="2769000" />
+      <workItem from="1623653408775" duration="1826000" />
+      <workItem from="1623765202939" duration="11000" />
+      <workItem from="1624174476095" duration="3226000" />
+      <workItem from="1624247102600" duration="3000" />
+      <workItem from="1624254018913" duration="22000" />
+      <workItem from="1624770740937" duration="1689000" />
+      <workItem from="1624775929260" duration="5693000" />
+      <workItem from="1624848704911" duration="1205000" />
+      <workItem from="1624864773178" duration="1748000" />
+      <workItem from="1624944939957" duration="89000" />
+      <workItem from="1624945039887" duration="30000" />
+      <workItem from="1624945081759" duration="1925000" />
+      <workItem from="1624951894136" duration="45000" />
+      <workItem from="1624951947303" duration="79000" />
+      <workItem from="1624952035822" duration="2012000" />
+      <workItem from="1624955269579" duration="204000" />
+      <workItem from="1625020694800" duration="2739000" />
+      <workItem from="1625044684010" duration="660000" />
+      <workItem from="1625282402871" duration="735000" />
+      <workItem from="1625283195420" duration="2193000" />
+      <workItem from="1625456323836" duration="1928000" />
     </task>
     <servers />
   </component>
