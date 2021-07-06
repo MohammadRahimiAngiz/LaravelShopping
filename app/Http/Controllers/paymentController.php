@@ -48,13 +48,34 @@ class paymentController extends Controller
 
 //            header('Location: ' . $payment->getPayUrl());
 //            dd($payment->getPayUrl());
+            $order->payments()->create([
+                'resNumber'=>$resNumber,
+                'price'=>$price
+            ]);
+            Cart::flush();
             return redirect($payment->getPayUrl());
         }
         return back();
     }
 
-    public function callback()
+    public function callback(Request $request)
     {
-        return 'ok';
+        $token = config('services.payPing.token');
+
+        $payment = new \PayPing\Payment($token);
+
+        try {
+            if($payment->verify($request->refid, 1000)){
+                echo "success";
+            }else{
+                echo "fail";
+            }
+        }
+        catch (PayPingException $e) {
+            foreach (json_decode($e->getMessage(), true) as $msg) {
+                echo $msg;
+            }
+        }
+//        return $request->all();
     }
 }

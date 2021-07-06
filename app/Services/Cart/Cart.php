@@ -15,7 +15,7 @@ use Ramsey\Collection\Collection;
  * @method static Collection all()
  * @method static array get($id)
  * @method  static Cart put(array $value,Model $obj=null)
- *
+ * @method static Collection flush()
  */
 class Cart extends Facade
 {

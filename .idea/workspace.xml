@@ -9,23 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin/modules/jqvmap/dist/jquery.vmap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin/modules/jqvmap/dist/jquery.vmap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/AttributeAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AttributeAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/singleProduct.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Web/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/paymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/paymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Cart/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Cart/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Cart/CartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Cart/CartService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +191,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -481,7 +468,8 @@
       <workItem from="1625044684010" duration="660000" />
       <workItem from="1625282402871" duration="735000" />
       <workItem from="1625283195420" duration="2193000" />
-      <workItem from="1625456323836" duration="1928000" />
+      <workItem from="1625456323836" duration="13122000" />
+      <workItem from="1625542970289" duration="275000" />
     </task>
     <servers />
   </component>
@@ -491,23 +479,17 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="92da922d-b9b1-4feb-83a1-2b274a6fe95c">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>

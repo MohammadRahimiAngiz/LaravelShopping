@@ -117,4 +117,11 @@ class CartService
         }
         return false;
     }
+
+    public function flush()
+    {
+        $this->cart = collect([]);
+        session()->forget('cart');
+        return $this;
+    }
 }
