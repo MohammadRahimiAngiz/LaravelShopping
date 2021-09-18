@@ -44,11 +44,7 @@
                             <tbody>
                             <tr>
                                 <th>
-                                    <div class="custom-checkbox custom-control">
-                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
-                                               class="custom-control-input" id="checkbox-all">
-                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                                    </div>
+                                    Index Image
                                 </th>
                                 <th>ID</th>
                                 <th>Title<br/><small class="text-muted">User</small></th>
@@ -62,13 +58,18 @@
                             </tr>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td class="">
-                                        <div class="custom-checkbox custom-control">
-                                            <input type="checkbox" data-checkboxes="mygroup"
-                                                   class="custom-control-input" id="{{'checkbox'.$product->id}}">
-                                            <label for="{{'checkbox'.$product->id}}"
-                                                   class="custom-control-label">&nbsp;</label>
-                                        </div>
+{{--                                    <td class="">--}}
+{{--                                        <div class="custom-checkbox custom-control">--}}
+{{--                                            <input type="checkbox" data-checkboxes="mygroup"--}}
+{{--                                                   class="custom-control-input" id="{{'checkbox'.$product->id}}">--}}
+{{--                                            <label for="{{'checkbox'.$product->id}}"--}}
+{{--                                                   class="custom-control-label">&nbsp;</label>--}}
+{{--                                        </div>--}}
+{{--                                    </td>--}}
+                                    <td>
+                                        <figure class=" mr-2" >
+                                            <img src="{{$product->image}}" alt="{{$product->id}}" width="60px" style="border-radius: 4px;">
+                                        </figure>
                                     </td>
                                     <td>{{$product->id}}</td>
                                     <td>{{$product->title}}<br/><small class="text-muted">{{$product->user->name}}</small></td>
@@ -92,11 +93,13 @@
                                             </form>
                                         @endcan
                                         @can('edit-product')
-                                            <a href="{{route('admin.products.edit',[$product->id])}}"
-                                               class="btn btn-primary btn-sm">
+                                            <a href="{{route('admin.products.edit',[$product->id])}}" class="btn btn-primary btn-sm">
                                                 Edit
                                             </a>
                                         @endcan
+                                            <a href="{{route('admin.product.gallery.index',['product'=>$product->id])}}" class="btn btn-success btn-sm">
+                                               Gallery
+                                            </a>
                                     </td>
                                 </tr>
                             @endforeach

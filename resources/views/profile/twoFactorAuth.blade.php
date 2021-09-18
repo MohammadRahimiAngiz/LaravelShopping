@@ -34,7 +34,6 @@
                             {{old('type') == $key || auth()->user()->hasTwoFactor($key) ? 'selected' : ''}}
                         >{{$value}}</option>
                     @endforeach
-
                 </select>
             </div>
             <div class="form-group"
@@ -59,5 +58,5 @@
                 </button>
             </div>
         </form>
-
+    </div>
 @endsection

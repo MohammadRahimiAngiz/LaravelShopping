@@ -1,9 +1,26 @@
 @component('Admin.layouts.content',['title'=>'New Product'])
     @slot('css')
-
     @endslot
     @slot('script')
+        <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
+        <script src="/js/ckeditor4/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('description', {filebrowserImageBrowseUrl: '/file-manager/ckeditor'});
+            // CKEDITOR.replace('description');
+            document.addEventListener("DOMContentLoaded", function () {
 
+                document.getElementById('button-image').addEventListener('click', (event) => {
+                    event.preventDefault();
+
+                    window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+                });
+            });
+
+            // set file link
+            function fmSetLink($url) {
+                document.getElementById('image_label').value = $url;
+            }
+        </script>
     @endslot
     @slot('breadcrumb')
         <div class="section-header-breadcrumb">
@@ -12,9 +29,9 @@
             <div class="breadcrumb-item">New Product</div>
         </div>
     @endslot
-    <div class="col-12 col-lg-6 col-md-6 p-0">
+    <div class="col-12 col-lg-12 col-md-12 p-0">
         <div class="card">
-            <form action="{{route('admin.products.store')}}" method="POST">
+            <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -30,7 +47,7 @@
                         <label>Description</label>
                         <textarea
                             class="form-control @error('description')is-invalid @enderror"
-                            rows="3"
+                            rows="10" cols="80"
                             name="description"
                             id="description"
                             autocomplete="description">{{ old('description') }}</textarea>
@@ -75,6 +92,22 @@
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Upload index image</label>
+                        <div class="input-group">
+                            <input type="text" id="image_label"
+                                   class="form-control @error('image')is-invalid @enderror" name="image" >
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary text-white @error('image')is-invalid @enderror" type="button" id="button-image">
+                                    <i  class="fas fa-image"></i> Select Image
+                                </button>
+                            </div>
+                            @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                     </div>
                     <h2 class="section-title">Attributes Product</h2>
                     <hr>

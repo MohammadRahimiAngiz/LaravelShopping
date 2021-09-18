@@ -22,4 +22,5 @@
             </div>
         </form>
         <script type="text/javascript">form.token.focus();</script>
+    </div>
 @endsection

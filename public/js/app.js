@@ -49542,14 +49542,13 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // import Vue from 'vue';
-
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/Example.vue -> <example-component></example-component>
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
@@ -49560,6 +49559,14 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+// window.axios = require('axios');
+// import 'vue-select/dist/vue-select.css';
+// import attributeAdd from './components/AttributeAdd.vue';
+// import vSelect from 'vue-select'
+// import Example from "./components/Example";
+// Vue.component('attribute-add', attributeAdd);
+// Vue.component('example',Example);
+// Vue.component('v-select', vSelect)
 
 var app = new Vue({
   el: '#app',
@@ -49654,9 +49661,9 @@ __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\iran\laravelpro\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\iran\laravelpro\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\iran\laravelpro\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! D:\laravelpro\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\laravelpro\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! D:\laravelpro\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

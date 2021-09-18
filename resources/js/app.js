@@ -6,13 +6,13 @@
 
 require('./bootstrap');
 window.Vue = require('vue');
-// import Vue from 'vue';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/Example.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
@@ -25,7 +25,14 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+// window.axios = require('axios');
+// import 'vue-select/dist/vue-select.css';
+// import attributeAdd from './components/AttributeAdd.vue';
+// import vSelect from 'vue-select'
+// import Example from "./components/Example";
+// Vue.component('attribute-add', attributeAdd);
+// Vue.component('example',Example);
+// Vue.component('v-select', vSelect)
 const app = new Vue({
     el: '#app',
     data: {

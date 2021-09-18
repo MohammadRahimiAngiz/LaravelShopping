@@ -7,6 +7,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use phpDocumentor\Reflection\Types\Collection;
@@ -32,24 +33,12 @@ class ProductController extends Controller
         return view('Admin.Products.index', ['products' => $products]);
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categories = Category::all();
         return view('Admin.Products.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
-     */
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -59,36 +48,26 @@ class ProductController extends Controller
             'description' => ['required',],
             'categories' => ['required', 'array'],
             'attributes' => ['array'],
+            'image' => ['required',  'max:1024', 'min:30']
         ]);
         $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
         $product = auth()->user()->products()->create($data);
         $product->categories()->sync($data['categories']);
-        $this->attachAttributesProduct($data['attributes'], $product);
+        if (isset($data['attributes'])) {
+            $this->attachAttributesProduct($data['attributes'], $product);
+        }
         return redirect(route('admin.products.index'));
-
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-     */
     public function edit(Product $product)
     {
         $arrData = [];
         foreach ($product->attributes as $attr) {
             array_push($arrData, [$attr['name'], $attr->pivot->value['value']]);
         }
-        return view('Admin.Products.edit', [ 'product'=>$product,'arrData'=>json_encode($arrData)]);
+        return view('Admin.Products.edit', ['product' => $product, 'arrData' => json_encode($arrData)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Product $product)
     {
 
@@ -98,32 +77,38 @@ class ProductController extends Controller
             'stock' => ['required', 'numeric'],
             'description' => ['required',],
             'categories' => ['required', 'array'],
+            'image' => ['required', 'max:1024'],
             'attributes' => ['array'],
         ]);
+//        if ($request->file('image')) {
+//            $request->validate([
+//                'image' => ['required', 'image', 'max:1024', 'min:30'],
+//            ]);
+//            if (File::exists(public_path($product->image))) {
+//                File::delete(public_path($product->image));
+//            }
+//            $fileUpdate = $request->file('image');
+//            $destinationPath = '/images/product/index/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+//            $fileUpdate->move(public_path($destinationPath), $fileUpdate->getClientOriginalName());
+//            $data['image'] = $destinationPath . $fileUpdate->getClientOriginalName();
+//        }
         $data = $data + ['user_id' => $request->user()->id] + ['slug_title' => Str::slug($data['title'])];
         $product->update($data);
         $product->categories()->sync($data['categories']);
         $product->attributes()->detach();
-        $this->attachAttributesProduct($data['attributes'], $product);
+        if (isset($data['attributes'])) {
+            $this->attachAttributesProduct($data['attributes'], $product);
+        }
         alert()->success("Product: * $product->title * is updated.");
-        return redirect(route('admin.products.index'));
+        return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function destroy(Product $product)
     {
         $product->delete();
         return back();
     }
 
-    /**
-     * @param $attributes1
-     * @param Product $product
-     */
     protected function attachAttributesProduct($attributes1, Product $product): void
     {
         $attributes = collect($attributes1);

@@ -26,7 +26,7 @@
                         <x-search></x-search>
                     </div>
                     <div class="card-header-form">
-                        <a href="{{request()->fullUrlWithQuery(['admin'=>null,'search'=>null])}}"
+                        <a href="{{route('admin.users.index')}}"
                            class="btn btn-primary btn-sm ml-2">
                             <i class="fas fa-users mr-1"></i>
                         </a>
@@ -106,12 +106,12 @@
                                             <a href="{{route('admin.users.edit',[$user->id])}}"
                                                class="btn btn-primary btn-sm">Edit</a>
                                         @endcan
-                                        @if ($user->isStaffUser() || $user->isSuperUser())
+{{--                                        @if ($user->isStaffUser() || $user->isSuperUser())--}}
                                             @can('admin-user-permissions')
                                                 <a href="{{route('admin.user.permissions',$user->id)}}"
                                                    class="btn btn-warning btn-sm">Permissions</a>
                                             @endcan
-                                        @endif
+{{--                                        @endif--}}
                                     </td>
                                 </tr>
                             @endforeach

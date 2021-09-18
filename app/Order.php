@@ -15,11 +15,16 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot('quantity', 'price');
     }
 
     public function payments()
     {
         return $this->hasMany(Payment::class);
     }
+
+//    public function getPriceAttribute($value)
+//    {
+//        return $value.' $';
+//    }
 }

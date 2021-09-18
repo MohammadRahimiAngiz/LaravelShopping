@@ -59,11 +59,19 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('profile')}}">Profile</a>
+                                @can('Super-user')
+                                    <a class="dropdown-item" href="{{route('admin.dashboard')}}"><i class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>Admin Panel</a>
+                                @endcan
+                                <a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-ellipsis-h pr-2 "
+                                                                                        style="color: #e3342f;"></i>Profile</a>
+                                <a class="dropdown-item" href="{{route('profile.orders')}}"><i
+                                        class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>My Orders</a>
+                                <a class="dropdown-item" href="{{route('profile.orders')}}"><i
+                                        class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>My Orders</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    <i class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>{{ __('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"

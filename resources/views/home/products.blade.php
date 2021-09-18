@@ -14,15 +14,15 @@
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                        <article class="article article-style-b">
+                        <article class="article article-style-b" style="min-height: 93%;border-radius: 20px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.36);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.36);">
                             <div class="article-header">
-                                <div class="article-image" data-background="assets/img/news/img02.jpg" style="background-image: url(&quot;assets/img/news/img02.jpg&quot;);">
+                                <div class="article-image" data-background="{{$product->image}}" style="background-image: url({{$product->image}});border-radius: 20px;">
                                 </div>
                                 <div class="article-badge">
                                     <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Trending</div>
                                 </div>
                             </div>
-                            <div class="article-details pb-0">
+                            <div class="article-details pb-0" style="border-radius: 20px;">
                                 <div class="article-title">
                                     <h2><a href="{{url("product/$product->slug_title")}}">{{$product->title}}</a></h2>
                                 </div>
@@ -43,6 +43,9 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        <div class="section-lead text-center">
+            {{ $products->links() }}
         </div>
     </section>
 @endsection

@@ -22,8 +22,8 @@ Route::get('/', function () {
 //    'comment'=>'this my second comments',
 //    'user_id'=>auth()->user()->id,
 //]);
-
-    return view('layouts.app');
+return redirect('products');
+//    return view('layouts.app');
 //auth()->user()->comments()->create([
 //    'comment'=>'this is my comment',
 //    'commentable_id'=>$product->id,
@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
         Route::post('twoFactor', 'twoFactorAuthController@postManageTwoFactor');
         Route::get('TwoFactor/phone', 'tokenAuthController@getVerifyPhone')->name('tokenVerifyPhone');
         Route::post('TwoFactor/phone', 'tokenAuthController@postVerifyPhone');
+        Route::get('orders','orderController@index')->name('profile.orders');
+        Route::get('orders/{order}','orderController@showDetails')->name('profile.order.Details');
+        Route::get('orders/{order}/payment','orderController@payment')->name('profile.orders.payment');
     });
     Route::post('comments', 'HomeController@comment')->name('send.comment');
     Route::post('payment', 'PaymentController@payment')->name('cart.payment');

@@ -24,3 +24,7 @@ Route::resource('comments','CommentController')->only(['index','update','destroy
 Route::resource('categories','CategoryController')->except('show');
 Route::get('attributes','AttributeController@index');
 Route::get('attribute/values/{attribute:name}','AttributeController@attributeValues');
+Route::resource('orders','OrderController');
+Route::get('orders/payments/{order}','OrderController@payments')->name('orders.payments');
+Route::resource('product.gallery','ProductGalleryController');
+Route::get('product/{product}','ProductGalleryController@getImages');

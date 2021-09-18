@@ -33,12 +33,8 @@
                     </button>
                 </div>
             </div>
-
         </div>
-        <button class="btn btn-sm btn-outline-primary" type="button"
-                @click="attributes()"
-                v-if="showAttributes"
-        >
+        <button class="btn btn-sm btn-outline-primary" type="button"  @click="attributes()"  v-if="showAttributes">
             Attributes Product
         </button>
         <button class="btn btn-sm btn-outline-danger" type="button" @click="addAttribute()">New Attribute</button>

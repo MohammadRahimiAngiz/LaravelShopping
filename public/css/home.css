@@ -1,26 +1,25 @@
 .article::after {
-  border-left: 5px solid #563d7c;
-  border-bottom: 5px solid #563d7c;
-  border-radius: 5px;
+  border-radius: 10px;
   position: absolute;
-  bottom: -1px;
-  left: -1px;
+  bottom: -5px;
+  left: 25%;
   content: "";
   display: block;
-  width: 70%;
-  height: 25px;
+  width: 50%;
+  height: 10px;
+  background-color: #185ADB;
 }
 
-.article::before {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  content: "";
-  display: block;
-  width: 70%;
-  height: 25px;
-  border-top: 5px solid #563d7c;
-  border-right: 5px solid #563d7c;
-  border-radius: 5px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: -webkit-linear-gradient(-50deg, #185ADB, #e3342f);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
 }
 
