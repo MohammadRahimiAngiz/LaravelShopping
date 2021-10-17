@@ -1,5 +1,7 @@
 @extends('profile.layoutProfile')
-
+{{--@section('script')--}}
+{{--    <script type="text/javascript">form.token.focus();</script>--}}
+{{--@endsection--}}
 @section('profile')
     <div class="container">
         <form id="form" action="{{route('tokenVerifyPhone')}}" method="POST">

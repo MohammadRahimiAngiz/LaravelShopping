@@ -97,7 +97,7 @@ export default {
     },
 
     mounted() {
-        axios.get('/admin/product/' + this.productId)
+        axios.get("/admin/product/"+this.productId)
             .then(res => this.srcViewImages = res.data)
             .catch(resp => alert("Could not load Images" + resp));
     },

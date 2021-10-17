@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/components.min.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app" style="background-image: url('/image/bgNature.jpg');background-size: 100vw 100vh;height: 100vh;">
@@ -64,8 +65,6 @@
                                 @endcan
                                 <a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-ellipsis-h pr-2 "
                                                                                         style="color: #e3342f;"></i>Profile</a>
-                                <a class="dropdown-item" href="{{route('profile.orders')}}"><i
-                                        class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>My Orders</a>
                                 <a class="dropdown-item" href="{{route('profile.orders')}}"><i
                                         class="fas fa-ellipsis-h pr-2 " style="color: #e3342f;"></i>My Orders</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"

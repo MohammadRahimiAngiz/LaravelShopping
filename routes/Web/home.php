@@ -1,6 +1,6 @@
 <?php
 
-//use App\User;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+//    $users = User::all();
+//    $id=4;
+//    $email='mohammadrahimiangiz@gmail.com';
+//    $users = $users->diff(User::whereIn('id', [$id])->get());
+//    $users = $users->reject(function ($user) {
+//        return $user->email == 'mohammadrahimiangiz@gmail.com';
+//    });
+//
+//    return $users;
 //    auth()->loginUsingId('9');
 //dd(auth()->user()->getAuthPassword());
 //$product=\App\Product::find(4);
@@ -56,6 +65,7 @@ Route::middleware('auth')->group(function () {
         Route::get('orders','orderController@index')->name('profile.orders');
         Route::get('orders/{order}','orderController@showDetails')->name('profile.order.Details');
         Route::get('orders/{order}/payment','orderController@payment')->name('profile.orders.payment');
+        Route::post('/','indexController@editUser')->name('profile.edit.user');
     });
     Route::post('comments', 'HomeController@comment')->name('send.comment');
     Route::post('payment', 'PaymentController@payment')->name('cart.payment');

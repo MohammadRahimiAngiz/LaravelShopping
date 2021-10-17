@@ -1,5 +1,7 @@
 @extends('profile.layoutProfile')
-
+{{--@section('script')--}}
+{{--    <script type="text/javascript">form.token.focus();</script>--}}
+{{--@endsection--}}
 @section('profile')
     <div class="container">
         <h4>Two Factor Auth:</h4>

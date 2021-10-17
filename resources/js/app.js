@@ -6,7 +6,10 @@
 
 require('./bootstrap');
 window.Vue = require('vue');
-
+import viewProfileUser from '../views/vueComponent/viewProfileUser';
+import editProfileUser from "../views/vueComponent/editProfileUser";
+Vue.component('edit-profile-user',editProfileUser);
+Vue.component('view-profile-user',viewProfileUser);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

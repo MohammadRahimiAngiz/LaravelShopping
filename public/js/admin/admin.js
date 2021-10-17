@@ -2140,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/admin/product/' + this.productId).then(function (res) {
+    axios.get("/admin/product/" + this.productId).then(function (res) {
       return _this.srcViewImages = res.data;
     })["catch"](function (resp) {
       return alert("Could not load Images" + resp);

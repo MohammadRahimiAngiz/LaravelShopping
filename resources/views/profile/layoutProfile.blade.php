@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('script')
-<script type="text/javascript">form.token.focus();</script>
 @endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <ul class="nav nav-pills card-header-pills">
