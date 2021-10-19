@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
         Route::get('orders/{order}','orderController@showDetails')->name('profile.order.Details');
         Route::get('orders/{order}/payment','orderController@payment')->name('profile.orders.payment');
         Route::post('/','indexController@editUser')->name('profile.edit.user');
+        Route::post('uploadImage','indexController@UploadImageUser');
     });
     Route::post('comments', 'HomeController@comment')->name('send.comment');
     Route::post('payment', 'PaymentController@payment')->name('cart.payment');

@@ -6,8 +6,8 @@
             <div class="col-12 col-md-12 col-lg-5">
                 <div class="card profile-widget">
                     <div class="profile-widget-header">
-                        <img alt="image" src="/assets/img/avatar/avatar-1.png"
-                             class="rounded-circle profile-widget-picture">
+                        <img :alt="userData.name" :src="'/storage/'+userData.avatar"
+                             class="rounded-circle profile-widget-picture" style="height: 60px;width: 60px;">
                         <div class="profile-widget-items">
                             <div class="profile-widget-item">
                                 <div class="profile-widget-item-label">Posts</div>
@@ -41,13 +41,20 @@
                     </div>
                 </div>
             </div>
-            <edit-profile-user :userEdit="user" @userEditTo="userData=$event"></edit-profile-user>
-
+            <div class="col-12 col-md-12 col-lg-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Edit Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <upload-user-image :userId="userData.id" @userAvatar="userData.avatar=$event" @userEditTo="userData=$event" ></upload-user-image>
+                        <edit-profile-user :userEdit="user" @userEditTo="userData=$event"></edit-profile-user>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </template>
-
 <script>
 import editProfileUser from "./editProfileUser";
 
@@ -65,14 +72,9 @@ export default {
         editProfileUser,
     },
     mounted() {
-        // console.log(this.userId);
-        // axios.get("/profile/" + this.userId)
-        //     .then(res => this.user = res.data)
-        //     .catch(err =>  console.log(err));
     },
 }
 </script>
-
 <style scoped>
 
 </style>

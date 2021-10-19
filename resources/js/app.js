@@ -8,8 +8,19 @@ require('./bootstrap');
 window.Vue = require('vue');
 import viewProfileUser from '../views/vueComponent/viewProfileUser';
 import editProfileUser from "../views/vueComponent/editProfileUser";
+import uploadUserImage from "../views/vueComponent/uploadUserImage";
+import {ValidationObserver, ValidationProvider, extend} from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
+Vue.component('upload-user-image',uploadUserImage);
 Vue.component('edit-profile-user',editProfileUser);
 Vue.component('view-profile-user',viewProfileUser);
+Vue.component('ValidationProvider',ValidationProvider);
+Vue.component('ValidationObserver',ValidationObserver);
+
+
+Object.keys(rules).forEach(rule => {
+    extend(rule, rules[rule]);
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

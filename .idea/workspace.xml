@@ -9,27 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/popper.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vueComponent/editProfileUser.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vueComponent/viewProfileUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/avatar-green.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/waiting.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vueComponent/uploadUserImage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/profile/indexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/profile/indexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/file-manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/file-manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/getImageGalleryProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/getImageGalleryProduct.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/layoutProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/layoutProfile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/tokenTwoFactorAuth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/tokenTwoFactorAuth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/twoFactorAuth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/twoFactorAuth.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vueComponent/editProfileUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vueComponent/editProfileUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vueComponent/viewProfileUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vueComponent/viewProfileUser.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Web/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +216,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -237,18 +228,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laravelpro\public\image" />
       <recent name="D:\laravelpro\resources\sass" />
       <recent name="D:\laravelpro\resources\js" />
       <recent name="D:\laravelpro\public\js\admin" />
       <recent name="D:\laravelpro\public\css\admin\modules\bootstrap\css" />
-      <recent name="C:\xampp\htdocs\laravelpro\resources\views\Admin\Products\Gallery" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laravelpro\storage\app\public" />
       <recent name="D:\laravelpro\public\css" />
       <recent name="D:\laravelpro\public\js" />
       <recent name="C:\xampp\htdocs\iran\laravelpro\app\Http\Controllers\Admin\User" />
       <recent name="D:\laravelpro\resources\views\Admin\Users" />
-      <recent name="D:\laravelpro\resources\sass" />
     </key>
   </component>
   <component name="RunManager">
@@ -581,6 +572,12 @@
       <workItem from="1633858536628" duration="4725000" />
       <workItem from="1634135816859" duration="5000" />
       <workItem from="1634358465156" duration="13338000" />
+      <workItem from="1634445229811" duration="15115000" />
+      <workItem from="1634481519692" duration="3514000" />
+      <workItem from="1634531411434" duration="9326000" />
+      <workItem from="1634560691768" duration="4800000" />
+      <workItem from="1634618592084" duration="2156000" />
+      <workItem from="1634626373261" duration="15735000" />
     </task>
     <servers />
   </component>
