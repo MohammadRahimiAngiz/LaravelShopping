@@ -6,7 +6,7 @@
             <div class="col-12 col-md-12 col-lg-5">
                 <div class="card profile-widget">
                     <div class="profile-widget-header">
-                        <img :alt="userData.name" :src="'/storage/'+userData.avatar"
+                        <img :alt="userData.name.slice(0,2).toUpperCase()" :src="'/storage/'+userData.avatar"
                              class="rounded-circle profile-widget-picture" style="height: 60px;width: 60px;">
                         <div class="profile-widget-items">
                             <div class="profile-widget-item">

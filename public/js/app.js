@@ -2021,6 +2021,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "editProfileUser",
   props: {
@@ -2032,8 +2037,17 @@ __webpack_require__.r(__webpack_exports__);
       avatar: '',
       isEmail: false,
       email: '',
-      confirmation: ''
+      confirmation: '',
+      success: false
     };
+  },
+  watch: {
+    success: function success() {
+      var vm = this;
+      setTimeout(function () {
+        vm.success = false;
+      }, 3000);
+    }
   },
   methods: {
     submitUser: function submitUser() {
@@ -2051,7 +2065,8 @@ __webpack_require__.r(__webpack_exports__);
           console.log(res.data);
           _this.isEmail = true;
         } else {
-          _this.isEmail = false; // console.log(res.data);
+          _this.isEmail = false;
+          _this.success = true; // alert('User Profile successfully edited.');
 
           _this.$emit('userEditTo', res.data);
         }
@@ -42569,23 +42584,46 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "card-footer text-right" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: {
-                            type: "submit",
-                            disabled: invalid || pristine
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                    Save Changes\n                "
-                          )
-                        ]
-                      )
-                    ])
+                    _c(
+                      "div",
+                      { staticClass: "d-flex justify-content-between " },
+                      [
+                        _c("div", [
+                          _vm.success
+                            ? _c("img", {
+                                attrs: {
+                                  src: "/image/success.gif",
+                                  width: "30",
+                                  alt: ""
+                                }
+                              })
+                            : _vm._e(),
+                          _vm.success
+                            ? _c(
+                                "small",
+                                { staticClass: "text-small text-success" },
+                                [_vm._v("User Profile successfully edited.")]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: {
+                              type: "submit",
+                              disabled: invalid || pristine
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Save Changes\n                "
+                            )
+                          ]
+                        )
+                      ]
+                    )
                   ]
                 )
               ]
@@ -42727,7 +42765,7 @@ var render = function() {
               staticClass: "rounded-circle profile-widget-picture",
               staticStyle: { height: "60px", width: "60px" },
               attrs: {
-                alt: _vm.userData.name,
+                alt: _vm.userData.name.slice(0, 2).toUpperCase(),
                 src: "/storage/" + _vm.userData.avatar
               }
             }),

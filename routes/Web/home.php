@@ -14,33 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-//    $users = User::all();
-//    $id=4;
-//    $email='mohammadrahimiangiz@gmail.com';
-//    $users = $users->diff(User::whereIn('id', [$id])->get());
-//    $users = $users->reject(function ($user) {
-//        return $user->email == 'mohammadrahimiangiz@gmail.com';
-//    });
-//
-//    return $users;
-//    auth()->loginUsingId('9');
-//dd(auth()->user()->getAuthPassword());
-//$product=\App\Product::find(4);
-//$product->comments()->create([
-//    'comment'=>'this my second comments',
-//    'user_id'=>auth()->user()->id,
-//]);
-return redirect('products');
-//    return view('layouts.app');
-//auth()->user()->comments()->create([
-//    'comment'=>'this is my comment',
-//    'commentable_id'=>$product->id,
-//    'commentable_type'=>'App\Product',
-//]);
-//return $product->comments()->get();
-//    return view('home.layouts.masterHome');
-});
+Route::get('/', 'IndexController@index');
 
 Auth::routes(['verify' => true]);
 Route::get('/auth/google', 'Auth\GoogleAuthController@redirect')->name('auth.google');

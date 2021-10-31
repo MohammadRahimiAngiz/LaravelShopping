@@ -9,16 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29cc3c36-4ef1-4e86-84f8-9eeebb3e1fb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/image/avatar-green.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/waiting.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vueComponent/uploadUserImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/modules.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/seotools.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/success.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravelpro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravelpro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/profile/indexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/profile/indexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/masterHome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/masterHome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vueComponent/editProfileUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vueComponent/editProfileUser.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vueComponent/viewProfileUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vueComponent/viewProfileUser.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Web/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Web/home.php" afterDir="false" />
@@ -199,6 +206,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
+      <path value="$PROJECT_DIR$/vendor/nwidart/laravel-modules" />
     </include_path>
   </component>
   <component name="ProjectId" id="1g4zoAJAF0NDtZu1VKIBJQFyD4O" />
@@ -216,7 +225,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JetBrains.Trial.Reset.v2.3.5/JetBrains.Trial.Reset.v2.3.5/ide-eval-resetter.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -242,11 +251,23 @@
       <recent name="D:\laravelpro\resources\views\Admin\Users" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
+    <configuration name="post-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="post-requests#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.post-requests#4" />
+        <item itemvalue="HTTP Request.post-requests#2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -577,7 +598,22 @@
       <workItem from="1634531411434" duration="9326000" />
       <workItem from="1634560691768" duration="4800000" />
       <workItem from="1634618592084" duration="2156000" />
-      <workItem from="1634626373261" duration="15735000" />
+      <workItem from="1634626373261" duration="16023000" />
+      <workItem from="1634707829695" duration="4367000" />
+      <workItem from="1634988434822" duration="133000" />
+      <workItem from="1634992670977" duration="4236000" />
+      <workItem from="1635147267232" duration="1754000" />
+      <workItem from="1635251261621" duration="3505000" />
+      <workItem from="1635309001024" duration="3291000" />
+      <workItem from="1635322556803" duration="1981000" />
+      <workItem from="1635574427456" duration="157000" />
+      <workItem from="1635574599557" duration="23000" />
+      <workItem from="1635574634947" duration="7660000" />
+      <workItem from="1635683176644" duration="66000" />
+      <workItem from="1635683275304" duration="32000" />
+      <workItem from="1635683333058" duration="28000" />
+      <workItem from="1635683408832" duration="711000" />
+      <workItem from="1635684167494" duration="38000" />
     </task>
     <servers />
   </component>

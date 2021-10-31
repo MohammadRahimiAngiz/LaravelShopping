@@ -1,0 +1,19 @@
+POST https://httpbin.org/post
+Content-Type: application/json
+
+{
+  "id": 1a74748f-ac99-46bb-bd94-f968fce17469,
+  "price": 311,
+  "ts": 1635253961,
+  "value": "content"
+}
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+
+id=999&value=content
+
+###
+

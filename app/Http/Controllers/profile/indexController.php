@@ -22,8 +22,8 @@ class indexController extends Controller
     {
         $user = User::findOrFail($request['id']);
         Storage::disk('public')->delete($user->avatar);
-        $path = Storage::disk('public')->putFileAs(
-            'avatars', $request->file('avatar'), $request->user()->name . '.' . $request->file('avatar')->extension()
+        $path = Storage::disk('public')->putFile(
+            'avatars', $request->file('avatar')
         );
         $data = [
             'avatar' => $path,

@@ -90,10 +90,15 @@
                         </ValidationProvider>
                     </div>
                 </div>
-                <div class="card-footer text-right">
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="/image/success.gif" width="30" alt="" v-if="success"><small
+                        class="text-small text-success" v-if="success">User Profile successfully edited.</small>
+                    </div>
                     <button type="submit" :disabled=" invalid || pristine " class="btn btn-primary">
                         Save Changes
                     </button>
+
                 </div>
             </form>
         </ValidationObserver>
@@ -113,6 +118,15 @@ export default {
             isEmail: false,
             email: '',
             confirmation: '',
+            success: false,
+        }
+    },
+    watch: {
+        success:  function () {
+            let vm = this;
+            setTimeout(  ()=> {
+                vm.success = false;
+            }, 3000)
         }
     },
     methods: {
@@ -131,7 +145,8 @@ export default {
                         this.isEmail = true;
                     } else {
                         this.isEmail = false;
-                        // console.log(res.data);
+                        this.success = true;
+                        // alert('User Profile successfully edited.');
                         this.$emit('userEditTo', res.data)
                     }
                 })
